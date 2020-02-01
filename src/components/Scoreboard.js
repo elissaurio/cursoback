@@ -20,7 +20,7 @@ const Scoreboard = () => {
           <Stopwatch />
         </div>
         <div className="scoreboard-content">
-          {context.state.players.map(player => <Player name={player.name} score={player.points} />
+          {context.state.players.map((player, index) => <Player name={player.name} score={player.points} key={index} index={index} />
           )}
          
         </div>

@@ -22,11 +22,33 @@ addPlayer = (name) => {
         players: [...this.state.players, player],
     });
 }
+
+increment = (playerIndex)=> {
+    const players = this.state.players;
+    players[playerIndex].points += 1;
+this.setState({
+    players: [...players],
+});
+}
+
+
+decrement = (playerIndex)=> {
+    const players = this.state.players;
+    if(players[playerIndex].points > 0) {
+    players[playerIndex].points -= 1;
+this.setState({
+    players: [...players],
+});
+}
+}
+
     render () {
     const context = {
 state: this.state,
 statusGame: this.statusGame,
 addPlayer: this.addPlayer,
+increment: this.increment,
+decrement: this.decrement,
     };
 
 
